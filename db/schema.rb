@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(:version => 20140221083359) do
     t.text     "contributors"
     t.integer  "retweet_count"
     t.integer  "favorite_count"
-    t.string   "text"
     t.text     "entities"
     t.boolean  "favorited"
     t.boolean  "retweeted"
@@ -38,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20140221083359) do
     t.boolean  "possibly_sensitive"
     t.string   "retweeted_status_id"
     t.boolean  "hidden",                    :default => false
+    t.string   "text"
   end
 
   add_index "tweets", ["hidden"], :name => "index_tweets_on_hidden"

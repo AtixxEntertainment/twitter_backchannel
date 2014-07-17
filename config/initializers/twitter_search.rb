@@ -1,8 +1,8 @@
 APP_CONFIG = YAML.load_file Rails.root.join("config","twitter_search.yml").to_s
 
 Twitter.configure do |config|
-  config.consumer_key = APP_CONFIG["twitter"]["consumer_key"]
-  config.consumer_secret = APP_CONFIG["twitter"]["consumer_secret"]
-  config.oauth_token = APP_CONFIG["twitter"]["access_token"]
-  config.oauth_token_secret = APP_CONFIG["twitter"]["access_token_secret"]
+  config.consumer_key = ENV["TWITTER_KEY"]
+  config.consumer_secret = ENV["TWITTER_SECRET"]
+  config.oauth_token = ENV["TWITTER_API_ACCESS"]
+  config.oauth_token_secret = ENV["TWITTER_API_SECRET"]
 end

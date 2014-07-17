@@ -19,7 +19,7 @@ class Tweet < ActiveRecord::Base
   scope :newers_first, -> { order "id desc" }
   scope :no_retweets, -> { where "text NOT LIKE 'RT%'" }
   scope :retweets_for, ->(id_str) { where retweeted_status_id: id_str }
-  scope :not_hidden, -> { where "hidden = 0" }
+  scope :not_hidden, -> { where hidden: false }
   scope :hidden, -> { where hidden: true }
 
   def user=(user_hash)

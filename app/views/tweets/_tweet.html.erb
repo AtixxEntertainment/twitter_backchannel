@@ -7,9 +7,9 @@
       <strong><%= tweet.user.name %></strong>
       <span class="screen_name">@<%= tweet.user.screen_name %></span>
     </div>
-    <div class="created-at">
+    <%= link_to "https://twitter.com/#{tweet.user.screen_name}/status/#{tweet.id_str}", class: "created-at" do %>
       hace <%= time_ago_in_words tweet.created_at %>
-    </div>
+    <% end %>
     <div><%= tweet.text %></div>
     <% if tweet.retweeters.any? %>
       <div class="retweeters">

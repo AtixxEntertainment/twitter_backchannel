@@ -1,3 +1,5 @@
+ruby "2.1.1"
+
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.12'
@@ -5,9 +7,8 @@ gem 'rails', '3.2.12'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-# Use mysql as the database for Active Record
-gem 'mysql2'
-
+# Use postgresql as the database for Active Record
+gem 'pg'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -30,7 +31,7 @@ gem 'jquery-rails'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
@@ -39,18 +40,18 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem "kaminari"
-gem "exception_notification"
-gem "rspec-rails"
-gem "rb-fsevent"
 gem "twitter"
 
-gem "pry"
+gem "dotenv"
+gem "sentry-raven", git: "https://github.com/getsentry/raven-ruby.git"
 
 group :test, :development do
   gem "factory_girl_rails"
   gem "capybara"
   gem "guard-rspec"
   gem "rspec-rails"
+  gem "rb-fsevent"
+  gem "pry"
 end
 
 group :development do
@@ -62,4 +63,8 @@ group :development do
 end
 
 group :test do
+end
+
+group :production do
+  gem "rails_12factor"
 end
