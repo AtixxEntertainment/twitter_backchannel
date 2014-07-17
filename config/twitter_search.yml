@@ -1,4 +1,4 @@
 twitter:
-  query: "#samsa"
+  query: "#samsa OR #SAMSA"
 app:
   title: "#Samsa"
