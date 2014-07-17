@@ -1,10 +1,18 @@
 <div class="align_center">
-  <h1>#Samsa</h1>
-</div>
-<div class="align_center hidden">
-  <%= image_tag "/images/logofedes.jpeg", :class => "header_logo" %>
+  <%= image_tag "/images/samsa.png", id: "samsa-header" %>
+  <h2>
+    <a href="http://samsarpg.com" target="_blank">www.samsarpg.com</a>
+  </h2>
 </div>
 <div class="clear"></div>
+
+<div class="the_tweets">
+  <%= render @tweets %>
+</div>
+
+<div class="align_center">
+  <%= paginate @tweets, remote: true %>
+</div>
 
 <div class="twitter_accounts">
   <div class="twitter_account">
@@ -17,14 +25,6 @@
     <div class="name">prendho</div>
     <div class="username">@prendho</div>
   </div>
-</div>
-
-<div class="the_tweets">
-  <%= render @tweets %>
-</div>
-
-<div class="align_center">
-  <%= paginate @tweets, remote: true %>
 </div>
 
 <%= javascript_tag do %>
