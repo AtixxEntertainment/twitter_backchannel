@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140221083359) do
+ActiveRecord::Schema.define(:version => 20141020142418) do
 
   create_table "tweets", :force => true do |t|
     t.text     "metadata"
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(:version => 20140221083359) do
     t.boolean  "notifications"
     t.datetime "created_at",                         :null => false
     t.datetime "updated_at",                         :null => false
+    t.string   "profile_location"
   end
 
   add_index "users", ["id_str"], :name => "index_users_on_id_str", :unique => true
